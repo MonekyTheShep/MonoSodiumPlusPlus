@@ -11,7 +11,7 @@ import haxe.io.BytesOutput;
 
 
 
-// The site's theme
+// The site's mirror
 enum MonosodiumFlavor {
     E621;
     E926;

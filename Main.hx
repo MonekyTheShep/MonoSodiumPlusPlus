@@ -1,6 +1,9 @@
 package;
 
 import monosodiumplusplus.MonoSodiumPlusPlus;
+
+// TODO error checking
+// API key
 class Main {
     static function main() {
         var monosodium:MonosodiumPlusPlus = new MonosodiumPlusPlus(MonosodiumFlavor.E926, MonosodiumRequestType.POSTJSON)
