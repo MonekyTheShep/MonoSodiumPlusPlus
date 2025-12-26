@@ -1,2 +1,2 @@
 # MonoSodiumPlusPlus
-basic e621 wrapper in e621
+basic e621 wrapper in haxe
