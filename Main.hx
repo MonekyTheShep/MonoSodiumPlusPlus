@@ -15,7 +15,7 @@ class Main {
         monosodium.postJson.getSearchResults(
             postData -> {
             for(post in postData.posts) {
-                trace("Post ID: " + post.id);
+                trace("Post ID:", post.id);
                 trace("Post count", post.rating);
             }
          }

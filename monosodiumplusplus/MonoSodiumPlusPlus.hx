@@ -70,7 +70,7 @@ class MonosodiumPlusPlus {
         var url = getUrl();
         
                 
-        switch (monsodiumRequestType) {
+        switch (this.monsodiumRequestType) {
             case POSTJSON: 
                 url = '$url/posts.json';
         } 
