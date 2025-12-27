@@ -16,9 +16,12 @@ class Main {
                 .setLimit(5)
                     .setPage(5);
 
+                    
+        trace("------------------------------------------------");
         monosodium.posts.search(
         postData -> {
             for(post in postData.posts) {
+                trace("Post ID", post.id);
                 trace("Post Height", post.file.height);
                 trace("Post Width", post.file.width);
                 trace("Post File Size", post.file.size);
@@ -27,6 +30,7 @@ class Main {
                 trace("Post Sample Width", post.sample.width);
                 trace("Post Sample url", post.sample.url);
                 trace("Post alternates has", post.sample.alternates.has);
+                trace("------------------------------------------------");
             }
          }
         , err -> trace("Error: " + err));
@@ -43,6 +47,7 @@ class Main {
             trace("Post Sample Width", postData.post.sample.width);
             trace("Post Sample url", postData.post.sample.url);
             trace("Post alternates has", postData.post.sample.alternates.has);
+            trace("------------------------------------------------");
          }
         , err -> trace("Error: " + err));
 
