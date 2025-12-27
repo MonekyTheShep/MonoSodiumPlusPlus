@@ -9,8 +9,8 @@ class Posts {
     
     var monosodium:MonosodiumPlusPlus;
 
-    var tags:Array<String>;
-    var ratings:Array<String>;
+    var tags:Array<String> = [];
+    var ratings:Array<String> = [];
     var limit:String;
 
     public function new(monosodium:MonosodiumPlusPlus) {
@@ -37,11 +37,13 @@ class Posts {
 
         httpBuilder.setHeader("User-Agent", Constants.DEFAULT_USER_AGENT);
 
-        if (tags != null) {
+        if (tags != []) {
             for (tag in tags) {
                 httpBuilder.setParam("tags", tag);
             }
         }
+
+        
 
         if (limit != null) {
             httpBuilder.setParam("limit", limit);

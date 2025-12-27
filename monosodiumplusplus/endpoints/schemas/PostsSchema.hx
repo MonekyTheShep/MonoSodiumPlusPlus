@@ -11,13 +11,14 @@ typedef Post = {
     var updated_at:String;
     var file:PostFile;
     var preview:PostPreview;
-    var tags:Array<String>;
+    var sample:PostSamples;
     var score:PostScore;
-    var rating:Int;
-    var favCount:Int;
-    var samples:PostSamples;
+    var tags:Array<String>;
+    // add locked_tags
     var change_seq:Int;
     var flag:PostFlag;
+    var rating:Int;
+    var fav_count:Int;
     var sources:Array<String>;
     var pools:Array<Int>;
     var relationships:PostRelationships;
@@ -76,16 +77,16 @@ typedef PostSamples = {
     var height:Int;
     var width:Int;
     var url:String;
-    var alternates:PostSamplesAlternates;
-    var variants:PostSamplesVariants;
-    var samples:PostSample;
+
+
+    var alternates:PostSampleAlternate;
 }
 
-typedef PostSamplesAlternates = {
+typedef PostSampleAlternate = {
     var has:Bool;
     var original:SamplesAlternatesOriginal;
     var variants:PostSamplesVariants;
-    var sample:PostSample;
+    var samples:PostSample;
 }
 
 typedef SamplesAlternatesOriginal = {
