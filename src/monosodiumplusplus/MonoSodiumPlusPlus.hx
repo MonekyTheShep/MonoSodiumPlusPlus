@@ -1,6 +1,7 @@
 package monosodiumplusplus;
 
 
+import monosodiumplusplus.endpoints.RandomPost;
 import monosodiumplusplus.endpoints.Post;
 import monosodiumplusplus.endpoints.Posts;
 
@@ -17,6 +18,8 @@ class MonoSodiumPlusPlus {
 
     public var posts:Posts;
     public var post:SinglePost;
+    public var randomPost:RandomPost;
+    public var verboseMode:Bool;
     
 
     public function new(?monosodiumType:MonosodiumFlavor = MonosodiumFlavor.E926) {
@@ -24,6 +27,7 @@ class MonoSodiumPlusPlus {
 
         this.posts = new Posts(this);
         this.post = new SinglePost(this);
+        this.randomPost = new RandomPost(this);
     }
     
 
