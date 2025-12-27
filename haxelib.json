@@ -1,0 +1,11 @@
+{
+  "name": "monosodiumplusplus",
+  "url" : "https://github.com/MonekyTheShep/MonoSodiumPlusPlus",
+  "license": "MIT",
+  "tags": ["api", "wrapper"],
+  "description": "This library takes data from e926 (defaulted) or e621 (chosen) using HTTP GET Requests",
+  "version": "1.0.0",
+  "classPath": "monosodiumplusplus",
+  "releasenote": "Initial release, everything is working correctly.",
+  "contributors": ["MonekyTheShep"]
+}
