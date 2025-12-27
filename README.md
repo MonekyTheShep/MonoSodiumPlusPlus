@@ -35,7 +35,7 @@ monosodium.post.search(
     trace("Post ID", postData.post.id);
     trace("Post Height", postData.post.file.height);
     trace("Post Width", postData.post.file.width);
-    trace("Post File Size", postData.post.file.size);\
+    trace("Post File Size", postData.post.file.size);
     trace("Post File MD5", postData.post.file.md5);
     trace("Post Sample Height", postData.post.sample.height);
     trace("Post Sample Width", postData.post.sample.width);
