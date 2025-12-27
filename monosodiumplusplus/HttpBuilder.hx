@@ -13,7 +13,7 @@ class HttpBuilder {
         this.url = url;
     }
 
-    public function getHttpData():Dynamic {
+    public function getHttpData(onResult:String->Void):Void {
 
         var haxeHTTP:Http = new Http(url);
 
@@ -27,8 +27,7 @@ class HttpBuilder {
 
 
         haxeHTTP.onData = function(data:String) {
-           return data;
-        
+           onResult(data);
         }
 
         haxeHTTP.onError = function(err:String) {
@@ -38,8 +37,6 @@ class HttpBuilder {
         };
 
         haxeHTTP.request(false);
-
-        return null;
         
     }
 

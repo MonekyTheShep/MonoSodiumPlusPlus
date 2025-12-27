@@ -20,14 +20,14 @@ class Post {
         httpBuilder.setParam("id", id);
         httpBuilder.setHeader("User-Agent", "MyCoolBot/1.0 (by username on e621)");
 
-        var postData:PostsSchema = Json.parse(httpBuilder.getHttpData());
+        // var postData:PostsSchema = Json.parse(httpBuilder.getHttpData());
 
-        if (postData != null) {
-            onSuccess(postData);
-        } else
-        {
-            onError("Failed to parse posts");
-        }
+        // if (postData != null) {
+        //     onSuccess(postData);
+        // } else
+        // {
+        //     onError("Failed to parse posts");
+        // }
         
         
     }
