@@ -5,6 +5,8 @@ basic e621 wrapper in haxe
 ```haxe
 var monosodium:MonosodiumPlusPlus = new MonosodiumPlusPlus();
 
+monosodium.login("username", "api_token");
+
 // search individual post
 monosodium.post.search(
         "5833293",
