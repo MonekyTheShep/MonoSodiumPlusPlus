@@ -6,7 +6,7 @@ basic e621 wrapper in haxe.
 
 # Example Usage
 ```haxe
-var monosodium:MonosodiumPlusPlus = new MonosodiumPlusPlus();
+var monosodium:MonoSodiumPlusPlus = new MonoSodiumPlusPlus();
 
 // for e621 support add MonosodiumFlavor.E621 to the args of MonosodiumPlusPlus
 
