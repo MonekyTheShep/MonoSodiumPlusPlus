@@ -18,7 +18,7 @@ typedef Post = {
     var sample:PostSamples;
     var score:PostScore;
     var tags:Array<String>;
-    // add locked_tags
+    var locked_tags:Null<Bool>;
     var change_seq:Int;
     var flag:PostFlag;
     var rating:Int;
