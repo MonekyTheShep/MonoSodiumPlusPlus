@@ -1,7 +1,8 @@
 # MonoSodiumPlusPlus
 basic e621 wrapper in haxe.
 
-**Warning:** This library defaults to the e926 (sfw version). Changing the args may expose adult content. Use responsibly.
+> [!IMPORTANT]
+> **Warning:** This library defaults to the e926 (sfw version). Changing the args may expose adult content. Use responsibly.
 
 # Example Usage
 ```haxe
