@@ -6,6 +6,7 @@ class HttpEntry {
     
     public var httpBuilder:HttpBuilder;
     public var url:String;
+    
     public function new(httpBuilder:HttpBuilder, url:String) {
         this.httpBuilder = httpBuilder;
         this.url = url;

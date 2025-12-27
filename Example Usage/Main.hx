@@ -7,6 +7,9 @@ class Main {
     static function main() {
         var monosodium:MonoSodiumPlusPlus = new MonoSodiumPlusPlus();
 
+        var filemanager:FileManager = new FileManager("orbl is gay", Sys.getCwd(), "test.txt");
+        filemanager.write();
+
         //monosodium.login("username", "api_token");
         monosodium.posts
             .setTag("-female")
