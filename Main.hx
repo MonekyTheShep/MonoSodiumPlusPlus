@@ -1,7 +1,6 @@
 package;
 
 import monosodiumplusplus.MonoSodiumPlusPlus;
-
 // TODO error checking
 // API key
 class Main {

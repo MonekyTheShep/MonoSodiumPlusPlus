@@ -6,9 +6,10 @@ import haxe.io.Bytes;
 import haxe.io.BytesOutput;
 
 import monosodiumplusplus.endpoints.schemas.PostsSchema;
+import monosodiumplusplus.MonoSodiumPlusPlus;
 
-import monosodiumplusplus.MonoSodiumPlusPlus.MonosodiumPlusPlus;
 import haxe.Json;
+
 
 
 

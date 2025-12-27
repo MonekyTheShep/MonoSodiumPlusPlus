@@ -9,7 +9,7 @@ enum abstract MonosodiumFlavor(String) from String to String {
     final E926:MonosodiumFlavor = "e926";
 }
 
-class MonosodiumPlusPlus {
+class MonoSodiumPlusPlus {
     
     public var username:String;
     public var api_token:String;

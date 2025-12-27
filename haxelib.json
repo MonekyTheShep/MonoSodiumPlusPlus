@@ -4,8 +4,8 @@
   "license": "MIT",
   "tags": ["api", "wrapper"],
   "description": "This library takes data from e926 (defaulted) or e621 (chosen) using HTTP GET Requests",
-  "version": "1.0.2",
-  "classPath": "monosodiumplusplus",
-  "releasenote": "Nevermind, it was in my local folder",
+  "version": "1.0.5",
+  "classPath": "src/",
+  "releasenote": "Try fix file structure again",
   "contributors": ["MonekyTheShep"]
 }

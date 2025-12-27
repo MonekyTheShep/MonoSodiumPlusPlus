@@ -3,7 +3,7 @@ package monosodiumplusplus.endpoints;
 import haxe.crypto.Base64;
 import haxe.io.Bytes;
 import monosodiumplusplus.endpoints.schemas.PostsSchema;
-import monosodiumplusplus.MonoSodiumPlusPlus.MonosodiumPlusPlus;
+import monosodiumplusplus.MonoSodiumPlusPlus;
 import haxe.Json;
 
 class SinglePost {
