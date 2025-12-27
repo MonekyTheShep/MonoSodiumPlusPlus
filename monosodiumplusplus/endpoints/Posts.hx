@@ -1,5 +1,10 @@
 package monosodiumplusplus.endpoints;
 
+
+import haxe.crypto.Base64;
+import haxe.io.Bytes;
+import haxe.io.BytesOutput;
+
 import monosodiumplusplus.endpoints.schemas.PostsSchema;
 
 import monosodiumplusplus.MonoSodiumPlusPlus.MonosodiumPlusPlus;
@@ -48,7 +53,10 @@ class Posts {
         if (limit != null) {
             httpBuilder.setParam("limit", limit);
         }
-        
+
+        if (monosodium.username != null && monosodium.api_token != null) {
+            httpBuilder.setHeader("Authorization", Base64.encode(Bytes.ofString(monosodium.username + ":" + monosodium.api_token)));
+        }
 
         httpBuilder.getHttpData(data -> {
             var postData:PostsSchema = Json.parse(data);

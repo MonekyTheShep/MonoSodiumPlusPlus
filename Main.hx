@@ -26,7 +26,7 @@ class Main {
                 trace("Post alternates has", post.sample.alternates.has);
             }
          }
-            , err -> trace("Error: " + err)
+        , err -> trace("Error: " + err)
             
         );
 
