@@ -5,6 +5,8 @@ basic e621 wrapper in haxe
 ```haxe
 var monosodium:MonosodiumPlusPlus = new MonosodiumPlusPlus();
 
+monosodium.login("username", "api_token");
+
 // search individual post
 monosodium.post.search(
         "5833293",
@@ -29,19 +31,20 @@ monosodium.posts
     .setPage(5);
 
 
-monosodium.post.search(
-  "5833293",
-  postData -> {   
-    trace("Post ID", postData.post.id);
-    trace("Post Height", postData.post.file.height);
-    trace("Post Width", postData.post.file.width);
-    trace("Post File Size", postData.post.file.size);\
-    trace("Post File MD5", postData.post.file.md5);
-    trace("Post Sample Height", postData.post.sample.height);
-    trace("Post Sample Width", postData.post.sample.width);
-    trace("Post Sample url", postData.post.sample.url);
-    trace("Post alternates has", postData.post.sample.alternates.has);
-     }
-    , err -> trace("Error: " + err));
+
+monosodium.posts.search(
+        postData -> {
+                for(post in postData.posts) {
+                        trace("Post Height", post.file.height);
+                        trace("Post Width", post.file.width);
+                        trace("Post File Size", post.file.size);
+                        trace("Post File MD5", post.file.md5);
+                        trace("Post Sample Height", post.sample.height);
+                        trace("Post Sample Width", post.sample.width);
+                        trace("Post Sample url", post.sample.url);
+                        trace("Post alternates has", post.sample.alternates.has);
+                    }
+                 }
+                , err -> trace("Error: " + err));
 
 ```
