@@ -15,20 +15,6 @@ class Post {
 
     public function search(id:String, onSuccess:PostsSchema->Void, onError:String->Void):Void { 
         
-        var httpBuilder:HttpBuilder = new HttpBuilder(monosodium.getUrl() + '/posts/$id.json');
-
-        httpBuilder.setParam("id", id);
-        httpBuilder.setHeader("User-Agent", "MyCoolBot/1.0 (by username on e621)");
-
-        // var postData:PostsSchema = Json.parse(httpBuilder.getHttpData());
-
-        // if (postData != null) {
-        //     onSuccess(postData);
-        // } else
-        // {
-        //     onError("Failed to parse posts");
-        // }
-        
         
     }
 }

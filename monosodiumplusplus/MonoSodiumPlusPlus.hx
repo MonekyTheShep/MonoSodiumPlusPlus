@@ -7,21 +7,19 @@ import monosodiumplusplus.endpoints.Posts;
 
 import haxe.crypto.Hmac.HashMethod;
 import haxe.http.HttpMethod;
-import haxe.crypto.Base64;
-import haxe.io.Bytes;
-import haxe.io.BytesOutput;
 
 
 
-// The site's mirror
-enum MonosodiumFlavor {
-    E621;
-    E926;
-}
+
 
 enum MonosodiumRequestType {
     POSTS;
     POST;
+}
+
+enum abstract MonosodiumFlavor(String) from String to String {
+    final E621:MonosodiumFlavor = "e621";
+    final E926:MonosodiumFlavor = "e926";
 }
 
 class MonosodiumPlusPlus {
@@ -47,9 +45,9 @@ class MonosodiumPlusPlus {
         var url:String;
         switch (this.monsodiumType) {
             case E621: 
-                url = "https://e621.net";
+                url = 'https://$E621.net';
             case E926:
-                url = "https://e926.net";
+                url = 'https://$E926.net';
         }
         return url;
     }

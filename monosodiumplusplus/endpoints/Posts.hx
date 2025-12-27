@@ -10,6 +10,9 @@ import monosodiumplusplus.endpoints.schemas.PostsSchema;
 import monosodiumplusplus.MonoSodiumPlusPlus.MonosodiumPlusPlus;
 import haxe.Json;
 
+
+
+
 class Posts {
     
     var monosodium:MonosodiumPlusPlus;
@@ -17,6 +20,8 @@ class Posts {
     var tags:Array<String> = [];
     var ratings:Array<String> = [];
     var limit:String;
+
+    
 
     public function new(monosodium:MonosodiumPlusPlus) {
         this.monosodium = monosodium;
@@ -47,8 +52,6 @@ class Posts {
                 httpBuilder.setParam("tags", tag);
             }
         }
-
-        
 
         if (limit != null) {
             httpBuilder.setParam("limit", limit);
