@@ -1,8 +1,10 @@
 package monosodiumplusplus;
 
 
-import monosodiumplusplus.endpoints.PostJson;
-import haxe.Http;
+import monosodiumplusplus.endpoints.Post;
+import monosodiumplusplus.endpoints.Posts;
+
+
 import haxe.crypto.Hmac.HashMethod;
 import haxe.http.HttpMethod;
 import haxe.crypto.Base64;
@@ -18,30 +20,27 @@ enum MonosodiumFlavor {
 }
 
 enum MonosodiumRequestType {
-    POSTJSON;
+    POSTS;
+    POST;
 }
 
 class MonosodiumPlusPlus {
     
-    var username:String;
-    var api_token:String;
+    public var username:String;
+    public var api_token:String;
     var monsodiumType:MonosodiumFlavor;
-	var monsodiumRequestType:MonosodiumRequestType;
-    public var params = new Map<String, String>();
-    public var header = new Map<String, String>();
 
-    public var postJson:PostJson;
-    public var data:Dynamic;
+    public var posts:Posts;
+    public var post:Post;
     
 
-    public function new(?username:String = "", ?api_token:String = "", ?monosodiumType:MonosodiumFlavor = MonosodiumFlavor.E926, monosodiumRequestType:MonosodiumRequestType) {
-        this.username = username;
-        this.api_token = api_token;
+    public function new(?monosodiumType:MonosodiumFlavor = MonosodiumFlavor.E926) {
         this.monsodiumType = monosodiumType;
-        this.monsodiumRequestType = monosodiumRequestType;
 
-        this.postJson = new PostJson(this);
+        this.posts = new Posts(this);
+        this.post = new Post(this);
     }
+    
 
     public function getUrl():String {
 
@@ -55,50 +54,9 @@ class MonosodiumPlusPlus {
         return url;
     }
 
-    public function setParam(name:String, value:String):MonosodiumPlusPlus {
-        this.params[name] = value;
-        return this;
+    public function login(?username:String, api_token:String):Void {
+        this.username = username;
+        this.api_token = api_token;
     }
 
-    public function setHeader(header:String, value:String):MonosodiumPlusPlus {
-        this.header[header] = value;
-        return this;
-    }
-
-    public function build():Void {
-
-        var url = getUrl();
-        
-                
-        switch (this.monsodiumRequestType) {
-            case POSTJSON: 
-                url = '$url/posts.json';
-        } 
-
-        var haxeHTTP:Http = new Http(url);
-        for (name => value in params) {
-            haxeHTTP.setParameter(name, value);
-        }
-
-        for (headerName => value in header) {
-            haxeHTTP.setHeader(headerName, value);
-        }
-
-
-        haxeHTTP.onData = function(data:String) {
-           this.data = data;
-        
-        }
-
-        haxeHTTP.onError = function(err:String) {
-            trace("Error: " + err);
-            
-        };
-
-        haxeHTTP.request(false);
-        
-    
-    }
-
-    
 }
