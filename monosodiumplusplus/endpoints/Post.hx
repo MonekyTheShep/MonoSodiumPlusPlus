@@ -9,16 +9,25 @@ import haxe.Json;
 class SinglePost {
     
     var monosodium:MonosodiumPlusPlus;
+    var httpEntry:HttpEntry;
+    var httpBuilder:HttpBuilder;
+
     public function new(monosodium:MonosodiumPlusPlus) {
         this.monosodium = monosodium;
     }
 
     public function search(id:String, onSuccess:PostSchema->Void, onError:String->Void):Void { 
-        var httpBuilder:HttpBuilder = new HttpBuilder(monosodium.getUrl() + '/posts/$id.json');
 
+        
+        // httpEntry = new HttpEntry(httpBuilder, monosodium.getUrl() + '/posts/$id.json');
+        // httpEntry.build();
+        // httpEntry.httpBuilder.setHeader("User-Agent", Constants.DEFAULT_USER_AGENT);
+
+
+        var httpBuilder:HttpBuilder = new HttpBuilder(monosodium.getUrl() + '/posts/$id.json');
         httpBuilder.setHeader("User-Agent", Constants.DEFAULT_USER_AGENT);
 
-        httpBuilder.setHeader("id", id);
+        httpBuilder.setParam("id", id);
 
         if (monosodium.username != null && monosodium.api_token != null) {
             httpBuilder.setHeader("Authorization", Base64.encode(Bytes.ofString(monosodium.username + ":" + monosodium.api_token)));
