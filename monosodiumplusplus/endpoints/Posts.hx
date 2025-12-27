@@ -20,6 +20,7 @@ class Posts {
     var tags:Array<String> = [];
     var ratings:Array<String> = [];
     var limit:String;
+    var page:String;
 
     
 
@@ -34,6 +35,11 @@ class Posts {
 
     public function setRating(rating:String):Posts {
         this.ratings.push(rating);
+        return this;
+    }
+
+    public function setPage(page:String):Posts {
+        this.page = page;
         return this;
     }
 
@@ -56,6 +62,11 @@ class Posts {
         if (limit != null) {
             httpBuilder.setParam("limit", limit);
         }
+
+        if (page != null) {
+            httpBuilder.setParam("page", page);
+        }
+
 
         if (monosodium.username != null && monosodium.api_token != null) {
             httpBuilder.setHeader("Authorization", Base64.encode(Bytes.ofString(monosodium.username + ":" + monosodium.api_token)));

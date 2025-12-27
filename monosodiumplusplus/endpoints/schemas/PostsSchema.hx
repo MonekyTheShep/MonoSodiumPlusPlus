@@ -4,6 +4,10 @@ typedef PostsSchema = {
     var posts:Array<Post>;
 }
 
+typedef PostSchema = {
+    var post:Post;
+}
+
 
 typedef Post = {
     var id:String;

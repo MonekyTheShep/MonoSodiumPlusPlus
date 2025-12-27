@@ -29,14 +29,14 @@ class MonosodiumPlusPlus {
     var monsodiumType:MonosodiumFlavor;
 
     public var posts:Posts;
-    public var post:Post;
+    public var post:SinglePost;
     
 
     public function new(?monosodiumType:MonosodiumFlavor = MonosodiumFlavor.E926) {
         this.monsodiumType = monosodiumType;
 
         this.posts = new Posts(this);
-        this.post = new Post(this);
+        this.post = new SinglePost(this);
     }
     
 
