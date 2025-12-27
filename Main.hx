@@ -32,7 +32,8 @@ class Main {
         monosodium.post.search(
         "5833293",
         postData -> {   
-            trace(postData.post.file.height);
+            trace("Post ID", postData.post.id);
+            trace("Post Height", postData.post.file.height);
             trace("Post Width", postData.post.file.width);
             trace("Post File Size", postData.post.file.size);
             trace("Post File MD5", postData.post.file.md5);

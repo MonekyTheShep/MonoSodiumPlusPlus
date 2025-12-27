@@ -18,7 +18,6 @@ class SinglePost {
 
         httpBuilder.setHeader("User-Agent", Constants.DEFAULT_USER_AGENT);
 
-
         httpBuilder.setHeader("id", id);
 
         if (monosodium.username != null && monosodium.api_token != null) {
