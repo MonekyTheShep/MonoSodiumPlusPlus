@@ -5,6 +5,8 @@ basic e621 wrapper in haxe
 ```haxe
 var monosodium:MonosodiumPlusPlus = new MonosodiumPlusPlus();
 
+// for e621 support add MonosodiumFlavor.E621 to the args of MonosodiumPlusPlus
+
 monosodium.login("username", "api_token");
 
 // search individual post
