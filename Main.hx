@@ -8,12 +8,12 @@ class Main {
     static function main() {
         var monosodium:MonosodiumPlusPlus = new MonosodiumPlusPlus();
 
-        //monosodium.login("usasdfasdername", "api_token");
+        //monosodium.login("username", "api_token");
         monosodium.posts
             .setTag("-female")
             .setTag("femboy")
-                .setLimit(5)
-                    .setPage(5);
+                .setLimit(6)
+                    .setPage(7);
 
                     
         trace("------------------------------------------------");

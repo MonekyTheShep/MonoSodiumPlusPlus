@@ -33,8 +33,8 @@ monosodium.posts
 
 
 monosodium.posts.search(
-        postData -> {
-                for(post in postData.posts) {
+        postsData -> {
+                for(post in postsData.posts) {
                         trace("Post Height", post.file.height);
                         trace("Post Width", post.file.width);
                         trace("Post File Size", post.file.size);
