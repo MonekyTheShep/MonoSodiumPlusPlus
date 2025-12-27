@@ -33,6 +33,15 @@ class Posts {
         return this;
     }
 
+
+    public function removeTag(tag:String):Posts {
+        if(this.tags.contains(tag)) {
+            this.tags.remove(tag);
+        }
+        
+        return this;
+    }
+
     // public function setRating(rating:Int):Posts {
     //     this.ratings.push(rating);
     //     return this;
