@@ -10,12 +10,12 @@ class Main {
 
         //monosodium.login("username", "api_token")
         //monosodium.posts.setTag("-female").setRating("s");
-        
+
+        monosodium.posts.setLimit("5");
         monosodium.posts.search(
         postData -> {
             for(post in postData.posts) {
                 trace("Post ID:", post.id);
-                trace("Post count", post.rating);
             }
          }
             , err -> trace("Error: " + err)

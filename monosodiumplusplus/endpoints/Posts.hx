@@ -11,6 +11,7 @@ class Posts {
 
     var tags:Array<String>;
     var ratings:Array<String>;
+    var limit:String;
 
     public function new(monosodium:MonosodiumPlusPlus) {
         this.monosodium = monosodium;
@@ -26,11 +27,26 @@ class Posts {
         return this;
     }
 
+    public function setLimit(limit:String):Posts {
+        this.limit = limit;
+        return this;
+    }
+
     public function search(onSuccess:PostsSchema->Void, onError:String->Void):Void {
         var httpBuilder:HttpBuilder = new HttpBuilder(monosodium.getUrl() + '/posts.json');
 
         httpBuilder.setHeader("User-Agent", Constants.DEFAULT_USER_AGENT);
-        //httpBuilder.setHeader("tags", tag);
+
+        if (tags != null) {
+            for (tag in tags) {
+                httpBuilder.setParam("tags", tag);
+            }
+        }
+
+        if (limit != null) {
+            httpBuilder.setParam("limit", limit);
+        }
+        
 
         httpBuilder.getHttpData(data -> {
             var postData:PostsSchema = Json.parse(data);

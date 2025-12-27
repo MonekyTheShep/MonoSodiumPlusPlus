@@ -54,7 +54,7 @@ class MonosodiumPlusPlus {
         return url;
     }
 
-    public function login(?username:String, api_token:String):Void {
+    public function login(username:String, api_token:String):Void {
         this.username = username;
         this.api_token = api_token;
     }
