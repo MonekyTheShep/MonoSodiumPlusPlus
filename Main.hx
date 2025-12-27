@@ -11,8 +11,9 @@ class Main {
         //monosodium.login("username", "api_token")
         monosodium.posts
             .setTag("-female")
+            .setTag("femboy")
                 .setLimit("5")
-                    .setPage("2");
+                    .setPage("3");
 
         monosodium.posts.search(
         postData -> {
