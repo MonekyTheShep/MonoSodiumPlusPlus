@@ -1,3 +1,4 @@
 -cp src
 -main Main
+-lib monosodiumplusplus
 -cpp build/cpp

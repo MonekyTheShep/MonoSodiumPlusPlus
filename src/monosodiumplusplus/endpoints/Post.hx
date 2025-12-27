@@ -8,11 +8,11 @@ import haxe.Json;
 
 class SinglePost {
     
-    var monosodium:MonosodiumPlusPlus;
+    var monosodium:MonoSodiumPlusPlus;
     var httpEntry:HttpEntry;
     var httpBuilder:HttpBuilder;
 
-    public function new(monosodium:MonosodiumPlusPlus) {
+    public function new(monosodium:MonoSodiumPlusPlus) {
         this.monosodium = monosodium;
     }
 

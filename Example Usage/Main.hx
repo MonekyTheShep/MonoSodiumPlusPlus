@@ -5,7 +5,7 @@ import monosodiumplusplus.MonoSodiumPlusPlus;
 // API key
 class Main {
     static function main() {
-        var monosodium:MonosodiumPlusPlus = new MonosodiumPlusPlus();
+        var monosodium:MonoSodiumPlusPlus = new MonoSodiumPlusPlus();
 
         //monosodium.login("username", "api_token");
         monosodium.posts

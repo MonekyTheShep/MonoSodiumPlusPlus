@@ -16,7 +16,7 @@ import haxe.Json;
 
 class Posts {
     
-    var monosodium:MonosodiumPlusPlus;
+    var monosodium:MonoSodiumPlusPlus;
 
     var tags:Array<String> = [];
     var ratings:Array<String> = [];
@@ -25,7 +25,7 @@ class Posts {
 
     
 
-    public function new(monosodium:MonosodiumPlusPlus) {
+    public function new(monosodium:MonoSodiumPlusPlus) {
         this.monosodium = monosodium;
     }
 
