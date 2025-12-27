@@ -6,14 +6,15 @@ import monosodiumplusplus.MonoSodiumPlusPlus;
 // API key
 class Main {
     static function main() {
-        var monosodium:MonosodiumPlusPlus = new MonosodiumPlusPlus(MonosodiumFlavor.E926);
+        var monosodium:MonosodiumPlusPlus = new MonosodiumPlusPlus();
 
-        //monosodium.login("username", "api_token")
+        //monosodium.login("usasdfasdername", "api_token");
+        
         monosodium.posts
             .setTag("-female")
             .setTag("femboy")
-                .setLimit("5")
-                    .setPage("3");
+                .setLimit(5)
+                    .setPage(5);
 
         monosodium.posts.search(
         postData -> {

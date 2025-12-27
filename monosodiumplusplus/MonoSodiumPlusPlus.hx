@@ -4,19 +4,6 @@ package monosodiumplusplus;
 import monosodiumplusplus.endpoints.Post;
 import monosodiumplusplus.endpoints.Posts;
 
-
-import haxe.crypto.Hmac.HashMethod;
-import haxe.http.HttpMethod;
-
-
-
-
-
-enum MonosodiumRequestType {
-    POSTS;
-    POST;
-}
-
 enum abstract MonosodiumFlavor(String) from String to String {
     final E621:MonosodiumFlavor = "e621";
     final E926:MonosodiumFlavor = "e926";

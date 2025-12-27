@@ -33,18 +33,18 @@ class Posts {
         return this;
     }
 
-    public function setRating(rating:String):Posts {
-        this.ratings.push(rating);
+    // public function setRating(rating:Int):Posts {
+    //     this.ratings.push(rating);
+    //     return this;
+    // }
+
+    public function setPage(page:Int):Posts {
+        this.page = Std.string(page);
         return this;
     }
 
-    public function setPage(page:String):Posts {
-        this.page = page;
-        return this;
-    }
-
-    public function setLimit(limit:String):Posts {
-        this.limit = limit;
+    public function setLimit(limit:Int):Posts {
+        this.limit = Std.string(limit);
         return this;
     }
 
